@@ -1,0 +1,1197 @@
+/*
+ Theme Name: Anarcho Notepad
+ Theme URI: https://www.spacexchimp.com/themes/anarcho-notepad.html
+ Author: Space X-Chimp
+ Author URI: https://www.spacexchimp.com
+ Description: Inspired by the idea of anarchy, we designed this free WordPress theme for your personal blogs and diaries. This theme is perfect for writers and artists. "Anarcho Notepad" can be easily customized and already translated to different languages. It utilizes latest HTML-5, CSS-3, PHP and WordPress native functions for creating the awesomeness that looks good on every browser. We are constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask us and we would be happy to add it. We are glad to present you the Most Anarchist WP-Theme Of All! Enjoy!
+ Version: 2.48
+ Requires at least: 4.9
+ Tested up to: 5.6
+ Requires PHP: 5.6
+ License: GNU General Public License v3
+ License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ Tags: blog, two-columns, right-sidebar, custom-header, custom-background, custom-logo, custom-menu, featured-images, sticky-post, rtl-language-support, translation-ready, theme-options, footer-widgets, threaded-comments
+ Text Domain: anarcho-notepad
+
+ Copyright (c) 2013-2021, Space X-Chimp
+
+*/
+
+/******************************************************************************
+ *              PLEASE DON'T EDIT THIS FILE DIRECTLY                          *
+ *                                                                            *
+ *    To add custom styles, consider using a plugin from the same developer   *
+ *    "My Custom Styles" (https://wordpress.org/plugins/my-custom-styles/)    *
+ ******************************************************************************/
+
+/* Fonts
+-------------------------------------------------------------- */
+@font-face {
+    src: url('fonts/forum/Forum.eot');
+    src:
+        url('fonts/forum/Forum.eot?#iefix') format('embedded-opentype'),
+        url('fonts/forum/Forum.woff') format('woff'),
+        url('fonts/forum/Forum.ttf') format('truetype'),
+        url('fonts/forum/Forum.svg#Forum') format('svg');
+    font-family: 'Forum';
+    font-style: normal;
+    font-weight: normal;
+}
+
+section,
+article,
+header,
+footer,
+nav,
+aside,
+hgroup {
+    display: block;
+}
+
+[hidden] {
+    display: none;
+}
+
+/* Links
+-------------------------------------------------------------- */
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    color: black;
+    text-decoration: underline;
+}
+
+/* Align
+-------------------------------------------------------------- */
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.alignleft {
+    float: left;
+}
+
+.alignright {
+    float: right;
+}
+
+.wp-caption {
+    margin: 10px;
+    padding-top: 4px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #f3f3f3;
+    text-align: center;
+}
+
+.wp-caption img {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+    margin: 0;
+    padding: 0 4px 5px;
+    font-size: 11px;
+    line-height: 17px;
+}
+
+/* Background
+-------------------------------------------------------------- */
+body {
+    margin: 0;
+    font-family: Forum, Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 100%;
+}
+
+.site-header {
+    position: relative;
+    width: 960px;
+    height: 238px;
+    margin: 0 auto;
+}
+
+/* Blog Title
+-------------------------------------------------------------- */
+.logo {
+    position: absolute;
+}
+
+#title {
+    word-wrap: break-word;
+    width: 52%;
+    height: 70%;
+    margin-left: 4%;
+    overflow: hidden;
+}
+
+#title a {
+    color: #e5e5e5;
+}
+
+#title a:hover {
+    text-decoration: none;
+}
+
+.site-title {
+    position: relative;
+    margin: 0;
+    padding: 58px 0 10px;
+    font-size: 300%;
+    line-height: 0.8;
+    text-align: center;
+}
+
+.site-description {
+    position: relative;
+    margin: 0;
+    font-size: 120%;
+    text-align: center;
+}
+
+.site-description .home-link a {
+    text-decoration: none;
+    text-shadow: 0 4px 0 rgba(0, 0, 0, 0.6);
+}
+
+.site-header .home-link a:hover {
+    text-decoration: none;
+}
+
+/* Search Form (Header)
+-------------------------------------------------------------- */
+.top-search-form {
+    width: 25%;
+    margin-left: 67%;
+    padding-top: 0.3%;
+}
+
+/* Assistive Text
+-------------------------------------------------------------- */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+}
+
+/* Search Form (Widget)
+-------------------------------------------------------------- */
+.search-field {
+    width: 100%;
+}
+
+.search-submit {
+    display: none;
+}
+
+/* Notepad
+-------------------------------------------------------------- */
+.notepad-bottom {
+    position: relative;
+    width: 960px;
+    height: 60px;
+    margin: 0 auto;
+    margin-top: -20px;
+    background: url(images/notepad-bottom.png) no-repeat top center;
+}
+
+/* Content (Column 1)
+-------------------------------------------------------------- */
+#content {
+    word-wrap: break-word;
+    width: 870px;
+    min-height: 500px;
+    margin: 0 auto;
+    margin-top: -1px;
+    padding: 0 20px 0 70px;
+    background: url(images/notepad-middle.png) repeat-y top center;
+}
+
+pre,
+code {
+    box-sizing: border-box;
+    display: block;
+    margin: 3px;
+    padding: 10px;
+    overflow-x: auto;
+    border: 1px solid #939393;
+    background: #ececec;
+}
+
+table {
+    width: 100%;
+    margin: 1.5em 0;
+    padding: 1em;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 90%;
+    line-height: 2;
+    text-align: left;
+}
+
+td,
+th {
+    padding: 0.5em;
+    border: 1px solid #111;
+    text-align: center;
+}
+
+tbody tr:nth-child(odd) {
+    border: none;
+    background: #eee;
+    background: rgba(0, 0, 0, 0.08);
+}
+
+blockquote {
+    position: relative;
+    max-width: 450px;
+    margin: 0.25em 0;
+    padding: 0.25em 40px;
+    border-left: 1px solid #bbb;
+    background: #ececec;
+    color: #383838;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.45;
+}
+
+blockquote::before {
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    color: #7a7a7a;
+    font-size: 80px;
+    content: "\201C";
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 5px;
+    color: #2b2a2a;
+    font-size: 14px;
+    text-align: right;
+}
+
+blockquote cite::before {
+    content: "\2014 \2009";
+}
+
+#content .col01 {
+    width: 73%;
+    padding-bottom: 3px;
+    float: left;
+    font-size: 100%;
+    line-height: 150%;
+}
+
+#content .col01 h1,
+#content .col01 .post-title {
+    margin: 0;
+    padding: 0 0 10px;
+    overflow: hidden;
+    background: url(images/line.png) repeat-x bottom;
+    font-family: Forum, Times New Roman, Times, Georgia, serif;
+    font-size: 180%;
+    font-weight: normal;
+    line-height: 110%;
+    text-align: center;
+}
+
+#content .col01 h1 a,
+#content .col01 .post-title a {
+    color: #000;
+    text-decoration: none;
+}
+
+#content .col01 h1 a:hover,
+#content .col01 .post-title a:hover {
+    color: gray;
+}
+
+#content .col01 h2,
+#content .col01 h3,
+#content .col01 h4,
+#content .col01 h5,
+#content .col01 h6 {
+    text-align: center;
+}
+
+#content .col01 .post {
+    padding-top: 5px;
+    padding-bottom: 30px;
+}
+
+#content .col01 .thumbnail {
+    margin: 10px 0 10px 10px;
+    float: right;
+}
+
+#content .col01 .tagsandcopy {
+    margin-bottom: 0;
+    font-size: 90%;
+}
+
+#content .col01 article {
+    padding-bottom: 30px;
+}
+
+/* Author info box after post
+-------------------------------------------------------------- */
+
+.author-avatar-big {
+    text-align: center;
+}
+
+.author-avatar-big img {
+    width: 200px;
+    height: 200px;
+    float: none;
+}
+
+/* Transforme author-avatar */
+.author-avatar img {
+    -webkit-transform: rotate(-9deg);
+    transform: rotate(-9deg);
+    filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=6.123031769111886e-17,M12=-1,M21=1,M22=6.123031769111886e-17, SizingMethod="auto expand", enabled=true)';
+}
+
+*+html .transform img {
+    -webkit-filter: progid:dximagetransform.microsoft.matrix(M11=6.123031769111886e-17, M12=-1, M21=1, M22=6.123031769111886e-17, SizingMethod='auto expand', enabled=true);
+    filter: progid:dximagetransform.microsoft.matrix(M11=6.123031769111886e-17, M12=-1, M21=1, M22=6.123031769111886e-17, SizingMethod='auto expand', enabled=true);
+}
+
+#content .col01 .author-info {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    border-top: 2px solid #939393;
+    border-bottom: 2px solid #939393;
+    font-size: 120%;
+    text-align: justify;
+}
+
+#content .col01 .author-info .author-description {
+    margin-top: -13px;
+}
+
+#content .col01 .author-info .author-title {
+    width: 85%;
+    padding-top: 1px;
+    line-height: 100%;
+    text-align: center;
+}
+
+#content .col01 .author-info p.author-bio {
+    margin-left: 1px;
+}
+
+#content .col01 .author-info p.author-bio .author-link::after {
+    content: "\2192";
+}
+
+#content .col01 .meta {
+    padding-top: 8px;
+    background: url(images/line.png) repeat-x top;
+    font-size: 90%;
+    text-align: right;
+}
+
+#content .col01 .post-inner {
+    position: relative;
+    padding-top: 13px;
+}
+
+/* Date-tab (Ribbons)
+-------------------------------------------------------------- */
+#content .col01 .date-tab {
+    z-index: 1;
+    position: relative;
+    width: 20%;
+    margin: -5px 10px 10px -90px;
+    float: left;
+    border-radius: 8px 1px 1px;
+    background-color: #a00b0b;
+    box-shadow: 0 2px 4px #110303;
+    color: #000;
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 70%;
+    text-shadow: 0 1px 2px #c53d3d;
+}
+
+#content .col01 .date-tab::before {
+    position: absolute;
+    top: 30px;
+    left: -40px;
+    width: 40px;
+    height: 0;
+    border-width: 20px 10px;
+    border-style: solid;
+    border-radius: 0 0 10px;
+    border-color: #a00b0b #a00b0b #a00b0b transparent;
+    content: ' ';
+}
+
+#content .col01 .date-tab::after {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-width: 5px 10px;
+    border-style: solid;
+    border-radius: 8px 0 0;
+    border-color: #6d0404 #6d0404 transparent transparent;
+    content: ' ';
+}
+
+#content .col01 .date-tab .month {
+    display: block;
+    padding: 6px 16px 6px 0;
+    font-size: 70%;
+    text-align: right;
+}
+
+#content .col01 .date-tab .day {
+    display: block;
+    padding: 6px 16px 2px 0;
+    font-size: 112%;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* END-Date-tab (Ribbons) */
+
+#content .col01 .post-inner p {
+    overflow: visible;
+}
+
+#content .col01 .post-inner a {
+    text-decoration: underline;
+}
+
+#content .col01 .thumbnail {
+    margin: 12px 0 12px 12px;
+    float: right;
+}
+
+#content .col01 .meta a {
+    color: #000;
+    text-decoration: none;
+}
+
+#content .col01 .meta a:hover {
+    text-decoration: underline;
+}
+
+#content .col01 figure {
+    display: inline-block;
+    max-width: 90%;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+/* END-Content (Column 1) */
+
+/* Sidebar (Column 2)
+-------------------------------------------------------------- */
+#sidebar {
+    width: 210px;
+    float: right;
+    font-size: 100%;
+    line-height: 110%;
+}
+
+/* Follow
+-------------------------------------------------------------- */
+.follow {
+    height: 0;
+}
+
+.follow img {
+    width: 80px;
+    margin-left: 221px;
+}
+
+/* Yellow Sticker
+-------------------------------------------------------------- */
+#sidebar .yellow-sticker-middle {
+    width: 212px;
+    background: url(images/yellow-sticker-middle.png) repeat-y;
+}
+
+#sidebar .yellow-sticker-middle ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#sidebar .yellow-sticker-middle ul li {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    line-height: 110%;
+    list-style: none;
+}
+
+#sidebar .yellow-sticker-middle ul li .listMeta {
+    font-size: 10px;
+}
+
+#sidebar .yellow-sticker-middle ul li a {
+    display: block;
+    width: 170px;
+    margin-left: 10px;
+    padding: 4px 0 4px 25px;
+    border-top: 1px solid #ffe5be;
+    color: #21565e;
+    transition: margin 0.3s;
+}
+
+#sidebar .yellow-sticker-middle ul li a:hover {
+    margin-left: 20px;
+    color: #000;
+    text-decoration: none;
+}
+
+#sidebar .yellow-sticker-middle ul .sub-menu {
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+#sidebar .yellow-sticker-bottom {
+    width: 188px;
+    height: 62px;
+    padding: 12px 12px 0;
+    background: url(images/yellow-sticker-bottom.png) no-repeat left bottom;
+    font-size: 100%;
+    text-align: right;
+}
+
+/* White Sticker
+-------------------------------------------------------------- */
+#sidebar .white-sticker-top {
+    height: 124px;
+    background: url(images/white-sticker-top.png) no-repeat;
+}
+
+#sidebar .white-sticker-middle {
+    width: 212px;
+    background: url(images/white-sticker-middle.png) repeat-y;
+}
+
+#sidebar .white-sticker-middle ul {
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar .white-sticker-middle ul li {
+    margin: 0;
+    padding: 0;
+    font-size: 93%;
+    line-height: 130%;
+    list-style: none;
+}
+
+#sidebar .white-sticker-middle ul li a {
+    display: block;
+    width: 170px;
+    padding: 4px 0 4px 25px;
+    color: #21565e;
+}
+
+#sidebar .white-sticker-middle ul li a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+#sidebar .white-sticker-middle ul li a i {
+    margin-right: 6px;
+    color: navy;
+    font-size: 70%;
+}
+
+#sidebar .white-sticker-bottom {
+    width: 188px;
+    height: 62px;
+    padding: 12px 12px 0;
+    background: url(images/white-sticker-bottom.png) no-repeat;
+    font-size: 70%;
+    text-align: right;
+}
+
+#sidebar .white-sticker-bottom a {
+    color: #21565e;
+}
+
+#sidebar .white-sticker-bottom a:hover {
+    color: #21565e;
+    text-decoration: none;
+}
+
+/* Widgets
+ -------------------------------------------------------------- */
+
+/* About Widget */
+#sidebar .about-widget {
+    padding: 30px 10px 20px;
+    background: url(images/about-label.png) no-repeat 10px 5px;
+    font-family: Forum, Times New Roman, Times, Georgia, serif;
+    font-size: 100%;
+    line-height: 110%;
+}
+
+/* Links Widget */
+#sidebar .links-widget {
+    padding: 30px 10px 20px;
+    background: url(images/links-label.png) no-repeat 10px 5px;
+    text-align: center;
+}
+
+#sidebar .links-widget ul {
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar .links-widget ul li {
+    background: url(images/line.png) no-repeat bottom;
+    font-size: 100%;
+    line-height: 110%;
+    list-style: none;
+}
+
+#sidebar .links-widget ul li a {
+    display: block;
+    width: 186px;
+    margin: 0 auto;
+    padding: 3px 0;
+    color: #21565e;
+}
+
+#sidebar .links-widget ul li a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Other Widgets */
+#sidebar .widget {
+    display: block;
+    width: 90%;
+    padding: 10px;
+}
+
+#sidebar .widget-title {
+    font-family: Permanent Marker;
+    font-size: 18px;
+}
+
+select {
+    width: 100%;
+}
+
+/* END-Sidebar (Column 2) */
+
+/* Responsive * Fluid image, embed, object & video
+-------------------------------------------------------------- */
+
+/* Fluid images for posts, comments, and widgets */
+img,
+.entry-content img,
+.entry-summary img,
+.comment-content img,
+.widget img,
+.wp-caption {
+    max-width: 100%;
+}
+
+/* Make sure images with WordPress-added height and width attributes are scaled correctly. */
+.entry-content img,
+.entry-summary img,
+.comment-content img[height],
+img[class*="align"],
+img[class*="wp-image-"],
+img[class*="attachment-"] {
+    height: auto;
+}
+
+.size-large {
+    height: 100%;
+}
+
+/* Make sure videos and embeds fit their containers. */
+embed,
+iframe,
+object,
+video {
+    max-width: 100%;
+}
+
+/* Image style
+-------------------------------------------------------------- */
+
+/* Wrapping text around images
+-------------------------------------------------------------- */
+img.centered {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+img.alignright {
+    display: inline;
+    margin: 0 0 2px 15px;
+    padding: 4px;
+}
+
+img.alignleft {
+    display: inline;
+    margin: 0 15px 2px 0;
+    padding: 4px;
+}
+
+/* Miniatures
+-------------------------------------------------------------- */
+.wp-post-image {
+    display: block;
+    margin: 10px auto 3px;
+    border: 1px #ccc solid;
+    border-bottom: 5px solid #bbb;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer
+-------------------------------------------------------------- */
+#footer {
+    position: relative;
+    min-width: 1070px;
+    margin-top: 40px;
+    padding: 1% 0 0;
+    overflow: hidden;
+    border-top: 1px solid #8a8989;
+    background-color: #2d3032;
+    color: #ccc;
+    font-size: 92%;
+    line-height: 110%;
+    text-align: center;
+}
+
+#footer a {
+    color: #909490;
+    text-decoration: none;
+}
+
+#footer a:visited {
+    color: #909490;
+    text-decoration: none;
+}
+
+#footer-widgets {
+    display: block;
+    text-align: initial;
+}
+
+#footer-widgets span {
+    width: calc(33% - 20px);
+    margin-right: 10px;
+    margin-left: 10px;
+    float: left;
+}
+
+/* END-Footer */
+
+/* Comment
+-------------------------------------------------------------- */
+#submit {
+    padding: 2px 7px;
+    border: 1px solid #bfbfbf;
+    border-radius: 10px;
+    background-clip: padding-box;
+    background-color: whitesmoke;
+    text-decoration: none;
+    text-shadow: 0 0 1px #aaa;
+}
+
+#submit:hover {
+    padding: 2px 7px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background-clip: padding-box;
+    background-color: whitesmoke;
+    text-decoration: none;
+}
+
+#commentform {
+    margin: 0;
+    padding: 0;
+}
+
+#commentform .comment-field {
+    width: 290px;
+    margin: 0;
+    padding: 3px;
+    float: left;
+    border: 1px solid #939393;
+    background: #fff;
+    font-family: Forum, Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 75%;
+}
+
+#commentform .comment-box {
+    position: relative;
+    width: 70%;
+    margin: 0 0 10px;
+    padding: 3px;
+    border: 1px solid #939393;
+    border-radius: 10px;
+    background: #fff;
+    font-family: Forum, Tahoma, Arial, Helvetica, sans-serif;
+    opacity: 0.6;
+}
+
+#commentform .btnComment {
+    margin: 0;
+    padding: 2px;
+    float: left;
+    clear: left;
+    font-family: Forum, Tahoma, Arial, Helvetica, sans-serif;
+}
+
+#commentform .comment-notes {
+    display: none;
+}
+
+#commentform label {
+    font-family: Forum, Tahoma, Arial, Helvetica, sans-serif;
+}
+
+#commentform p {
+    margin-bottom: 0;
+}
+
+#commentform code {
+    display: inline;
+    border: none;
+    background: none;
+    font-family: Forum, Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 90%;
+}
+
+#commentform .form-allowed-tags {
+    margin-top: 0;
+    font-size: 90%;
+}
+
+#author,
+#email,
+#url,
+#comment {
+    display: block;
+    width: 48%;
+}
+
+#comment {
+    width: 98%;
+    height: 100px;
+}
+
+p.comments-title {
+    font-size: 130%;
+    font-weight: bold;
+}
+
+/* Comment list
+-------------------------------------------------------------- */
+.avatar {
+    margin-top: 10px;
+    margin-right: 10px;
+    float: left;
+    clear: left;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3), -2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.edit-link {
+    display: inline;
+}
+
+.reply {
+    display: inline;
+}
+
+.commentlist {
+    margin: 20px 0;
+    padding: 0;
+}
+
+.commentlist li {
+    padding: 12px 0;
+    background: url(images/line.png) no-repeat bottom;
+    line-height: 125%;
+    list-style: none;
+}
+
+.commentlist li a {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+}
+
+.commentlist li a:hover {
+    border-bottom: 1px solid #000;
+    background: #fffbc1;
+    color: #000;
+    text-decoration: none;
+}
+
+.commentdate {
+    display: block;
+    padding: 0 0 6px;
+    font-size: 60%;
+}
+
+.commentlist li cite {
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* END-Comment */
+
+/************************** Navigation **************************/
+/* "Continue reading" button
+-------------------------------------------------------------- */
+#content .col01 .post-inner a.more-link {
+    display: inline-block;
+    position: relative;
+    padding: 2px 6px;
+    border: 1px solid #bfbfbf;
+    border-radius: 10px;
+    background-clip: padding-box;
+    background-color: whitesmoke;
+    color: #000;
+    text-decoration: none;
+    text-shadow: 0 0 1px #aaa;
+}
+
+/* Next page
+-------------------------------------------------------------- */
+#content .col01 .post-inner .page-links {
+    width: 104%;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    line-height: 180%;
+    text-shadow: 0 0 1px #aaa;
+    white-space: nowrap;
+}
+
+#content .col01 .post-inner .page-links a {
+    border-bottom: none;
+    text-decoration: none;
+}
+
+#content .col01 .post-inner .page-links span {
+    padding: 2px 7px;
+    border: 1px solid #bfbfbf;
+    border-radius: 10px;
+    background-clip: padding-box;
+    background-color: whitesmoke;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* End-Breadcrumbs */
+
+/* Breadcrumbs
+-------------------------------------------------------------- */
+#breadcrumbs {
+    width: 104%;
+    margin-bottom: 20px;
+    overflow: hidden;
+    line-height: 180%;
+    text-shadow: 0 0 1px #aaa;
+    white-space: nowrap;
+}
+
+#breadcrumbs a,
+#breadcrumbs span {
+    padding: 2px 7px;
+    border: 1px solid #bfbfbf;
+    border-radius: 10px;
+    background-clip: padding-box;
+    background-color: whitesmoke;
+    text-decoration: none;
+}
+
+/* End-Breadcrumbs */
+
+/* Navigation Links
+-------------------------------------------------------------- */
+.nav-links {
+    padding: 20px 0;
+    color: #000;
+    font-size: 105%;
+    font-style: italic;
+    font-weight: 300;
+}
+
+/* End-Navigation Links */
+
+/* Page Navigation
+-------------------------------------------------------------- */
+#page-nav {
+    margin: 5px;
+    clear: both;
+    text-shadow: 0 0 1px #aaa;
+}
+
+#page-nav a,
+#page-nav span {
+    padding: 3px 12px;
+    border: 1px solid #bfbfbf;
+    border-radius: 10px;
+    background-clip: padding-box;
+    background-color: whitesmoke;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#page-nav a:hover,
+#page-nav span.current {
+    border-color: #bfbfbf;
+}
+
+#page-nav span.current {
+    font-weight: bold;
+}
+
+.paging-navigation .nav-links {
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+.paging-navigation .nav-previous {
+    float: left;
+}
+
+.paging-navigation .nav-next {
+    text-align: right;
+}
+
+/* End-Page Navigation */
+
+/* Post Navigation
+-------------------------------------------------------------- */
+.post-navigation .nav-links {
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+.post-navigation a[rel="next"] {
+    float: right;
+    text-align: right;
+}
+
+/* End-Post Navigation */
+
+/* Scroll to Top button
+-------------------------------------------------------------- */
+.scroll-to-top {
+    z-index: 10000;
+    position: fixed;
+    right: 15px;
+    bottom: 10px;
+    width: 30px;
+    height: 30px;
+    padding: 11px 13px;
+    border-radius: 2px;
+    background-color: #3f3b3b;
+    font-family: Fontawesome;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: background-color 0.1s linear;
+}
+
+.scroll-to-top:hover {
+    opacity: 1;
+}
+
+/* End-Scroll to Top button */
+/************************** END-Navigation **************************/
+
+/* Sitemap Page
+-------------------------------------------------------------- */
+.html-sitemap h2 {
+    padding-top: 10px;
+}
+
+.category {
+    padding-bottom: 5px;
+    list-style: none;
+}
+
+.grey {
+    background-color: inherit;
+    color: #777;
+}
+
+.cat-posts {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+
+.cat-posts li {
+    padding-bottom: 5px;
+    list-style: square;
+}
+
+.sitemap-authors li,
+.sitemap-pages li,
+.sitemap-archives li {
+    padding-bottom: 5px;
+}
+
+/* Some required CSS classes
+-------------------------------------------------------------- */
+.sticky {
+    position: relative;
+}
+
+.gallery-caption {
+    text-align: center;
+}
+
+.bypostauthor {
+    font-style: normal;
+}
+
+/* Remove The WordPress Stats Smiley Face added by JetPack plugin
+   because it messes up design
+-------------------------------------------------------------- */
+img#wpstats {
+    display: none;
+}
+
+
+/******************************************************************************
+ *              PLEASE DON'T EDIT THIS FILE DIRECTLY                          *
+ *                                                                            *
+ *    To add custom styles, consider using a plugin from the same developer   *
+ *    "My Custom Styles" (https://wordpress.org/plugins/my-custom-styles/)    *
+ ******************************************************************************/
